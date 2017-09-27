@@ -10,7 +10,7 @@ package banco;
  * @author Jose Daniel Yara Sepulveda
  */
 public class Tipo {
-    private String code;
+    private String code = null;
 
     public Tipo(String code) {
         this.code = code;

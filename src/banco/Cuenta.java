@@ -16,8 +16,8 @@ public class Cuenta {
     private String fechaCreacion;
     private String nomCliente;
     private ArrayList<Movimiento> movimientos = new ArrayList();
-    private int cantidad;
-    private String type;
+    private int cantidad = 0;
+    private String type = null;
 
     public Cuenta(int numeroCuenta, double saldoActual, String fechaCreacion, String nomCliente, int cantidad, String type) {
         this.numeroCuenta = numeroCuenta;
@@ -25,6 +25,8 @@ public class Cuenta {
             this.saldoActual = saldoActual + (double) cantidad;
         } else if(type.equals("Retiro")){
             this.saldoActual = saldoActual - (double) cantidad;
+        } else if(type.equals("Ninguno")){
+            this.saldoActual = saldoActual;
         } else
             this.saldoActual = saldoActual;
         this.fechaCreacion = fechaCreacion;

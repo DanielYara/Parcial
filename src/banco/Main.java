@@ -19,8 +19,10 @@ public class Main {
         Banco banco = new Banco("BB");
         banco.crearTipoTrans("Consignacion");
         banco.crearTipoTrans("Retiro");
+        banco.crearTipoTrans("Ninguno");
         banco.anadirCuenta(1, 324000, "23/08/2000", "Juan Parra", 100000, "Consignacion");
         banco.anadirCuenta(2, 1000000, "15/02/1992", "Maria Torrez", 50000, "Retiro");
+        banco.anadirCuenta(3, 500000, "27/02/1995", "John Mejia", 0, "Ninguno");
         
         System.out.println(banco.toString());
     }

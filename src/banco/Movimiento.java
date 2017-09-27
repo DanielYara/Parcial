@@ -12,8 +12,8 @@ package banco;
 public class Movimiento {
     private String fecha;
     private double saldoAnterior;
-    private double cantidad;
-    private Tipo tipo;
+    private double cantidad = 0.0;
+    private Tipo tipo = null;
 
     public Movimiento(String fecha, double saldoAnterior, double cantidad, Tipo tipo) {
         this.fecha = fecha;
