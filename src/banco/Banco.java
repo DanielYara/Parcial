@@ -8,7 +8,7 @@ import java.util.*;
 
 /**
  *
- * @author Estudiante
+ * @author Jose Daniel Yara Sepulveda
  */
 public class Banco {
     private String codigo;
@@ -27,9 +27,15 @@ public class Banco {
     }
     
     public void anadirCuenta(int numCuenta, double saldo, String fecha, String nomCliente, int cant, String type){
-        Cuenta cuenta = new Cuenta(numCuenta, saldo, fecha, nomCliente, cant, type);
-        this.cuentas.add(cuenta);
+        for(int i = 0; i < this.tipos.size(); i++){
+            Tipo aux = (Tipo) this.tipos.get(i);
+            if(aux.getCode().equals(type)){
+                Cuenta cuenta = new Cuenta(numCuenta, saldo, fecha, nomCliente, cant, type);
+                this.cuentas.add(cuenta);
+            }
+        }
     }
+    
 
     public String getCodigo() {
         return codigo;
@@ -53,6 +59,11 @@ public class Banco {
 
     public void setTipos(ArrayList<Tipo> tipos) {
         this.tipos = tipos;
+    }
+
+    @Override
+    public String toString() {
+        return "Banco{" + "codigo=" + codigo + ", cuentas=" + this.cuentas.toString() + '}';
     }
     
     

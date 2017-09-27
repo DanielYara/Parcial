@@ -7,7 +7,7 @@ package banco;
 
 /**
  *
- * @author Estudiante
+ * @author Jose Daniel Yara Sepulveda
  */
 public class Main {
 
@@ -22,7 +22,7 @@ public class Main {
         banco.anadirCuenta(1, 324000, "23/08/2000", "Juan Parra", 100000, "Consignacion");
         banco.anadirCuenta(2, 1000000, "15/02/1992", "Maria Torrez", 50000, "Retiro");
         
-        
+        System.out.println(banco.toString());
     }
     
 }

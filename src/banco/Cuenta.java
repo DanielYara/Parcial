@@ -8,20 +8,25 @@ import java.util.*;
 
 /**
  *
- * @author Estudiante
+ * @author Jose Daniel Yara Sepulveda
  */
 public class Cuenta {
     private int numeroCuenta;
     private double saldoActual;
     private String fechaCreacion;
     private String nomCliente;
-    private ArrayList<Movimiento> movimientos;
+    private ArrayList<Movimiento> movimientos = new ArrayList();
     private int cantidad;
     private String type;
 
     public Cuenta(int numeroCuenta, double saldoActual, String fechaCreacion, String nomCliente, int cantidad, String type) {
         this.numeroCuenta = numeroCuenta;
-        this.saldoActual = saldoActual;
+        if(type.equals("Consignacion")){
+            this.saldoActual = saldoActual + (double) cantidad;
+        } else if(type.equals("Retiro")){
+            this.saldoActual = saldoActual - (double) cantidad;
+        } else
+            this.saldoActual = saldoActual;
         this.fechaCreacion = fechaCreacion;
         this.nomCliente = nomCliente;
         this.movimientos = movimientos;
@@ -29,7 +34,7 @@ public class Cuenta {
         this.type = type;
         Tipo tipo = new Tipo(type);
         Movimiento movimiento;
-        movimiento = new Movimiento("26/09/2017", this.saldoActual, cantidad, tipo);
+        movimiento = new Movimiento("26/09/2017", saldoActual, cantidad, tipo);
         this.movimientos.add(movimiento);
     }
 
@@ -72,6 +77,28 @@ public class Cuenta {
     public void setMovimientos(ArrayList<Movimiento> movimientos) {
         this.movimientos = movimientos;
     }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "Cuenta{" + "numeroCuenta=" + numeroCuenta + ", saldoActual=" + saldoActual + ", fechaCreacion=" + fechaCreacion + ", nomCliente=" + nomCliente + ", movimientos=" + movimientos.toString() + '}';
+    }
+    
     
     
 }

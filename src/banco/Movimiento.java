@@ -7,7 +7,7 @@ package banco;
 
 /**
  *
- * @author Estudiante
+ * @author Jose Daniel Yara Sepulveda
  */
 public class Movimiento {
     private String fecha;
@@ -21,6 +21,7 @@ public class Movimiento {
         this.cantidad = cantidad;
         this.tipo = tipo;
     }
+   
 
     public String getFecha() {
         return fecha;
@@ -52,6 +53,11 @@ public class Movimiento {
 
     public void setTipo(Tipo tipo) {
         this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Movimiento{" + "fecha=" + fecha + ", saldoAnterior=" + saldoAnterior + ", cantidad=" + cantidad + ", tipo=" + this.tipo.toString() + '}';
     }
     
     

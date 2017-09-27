@@ -7,7 +7,7 @@ package banco;
 
 /**
  *
- * @author Estudiante
+ * @author Jose Daniel Yara Sepulveda
  */
 public class Tipo {
     private String code;
@@ -23,6 +23,10 @@ public class Tipo {
     public void setCode(String code) {
         this.code = code;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Tipo{" + "code=" + code + '}';
+    }
     
 }
